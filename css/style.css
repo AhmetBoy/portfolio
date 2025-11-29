@@ -1,0 +1,450 @@
+/* Custom Styles for Portfolio */
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Line Clamp Utility */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* View Toggle Buttons */
+.view-toggle-btn {
+    color: #71717a;
+    transition: all 0.3s ease;
+}
+
+.view-toggle-btn.active {
+    background: linear-gradient(to right, #4f46e5, #7c3aed, #3b82f6);
+    color: white;
+}
+
+.dark .view-toggle-btn {
+    color: #a1a1aa;
+}
+
+/* Swiper Custom Styles */
+.swiper {
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.projectsSwiper {
+    padding-bottom: 60px !important;
+}
+
+.modalSwiper {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.modalSwiper .swiper-slide {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent !important;
+}
+
+/* Main Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    background: rgba(255, 255, 255, 0.95) !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hide default Swiper icons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: '' !important;
+    display: none !important;
+}
+
+/* Add SVG arrows via background */
+.swiper-button-next {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%237c3aed' viewBox='0 0 24 24'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 24px 24px !important;
+}
+
+.swiper-button-prev {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%237c3aed' viewBox='0 0 24 24'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 24px 24px !important;
+}
+
+.dark .swiper-button-next,
+.dark .swiper-button-prev {
+    background-color: rgba(39, 39, 42, 0.95) !important;
+}
+
+/* Dark mode arrows - lighter purple */
+.dark .swiper-button-next {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a78bfa' viewBox='0 0 24 24'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E") !important;
+}
+
+.dark .swiper-button-prev {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a78bfa' viewBox='0 0 24 24'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E") !important;
+}
+
+/* Hover state - purple background with white arrows */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(124, 58, 237, 0.95) !important;
+}
+
+.swiper-button-next:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E") !important;
+}
+
+.swiper-button-prev:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E") !important;
+}
+
+/* Modal Swiper Buttons */
+.modal-button-next,
+.modal-button-prev {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hide default Swiper icons for modal */
+.modal-button-next::after,
+.modal-button-prev::after {
+    content: '' !important;
+    display: none !important;
+}
+
+/* Add SVG arrows via background for modal */
+.modal-button-next {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%237c3aed' viewBox='0 0 24 24'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 26px 26px !important;
+}
+
+.modal-button-prev {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%237c3aed' viewBox='0 0 24 24'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 26px 26px !important;
+}
+
+.dark .modal-button-next,
+.dark .modal-button-prev {
+    background-color: rgba(39, 39, 42, 0.95) !important;
+}
+
+/* Dark mode arrows for modal - lighter purple */
+.dark .modal-button-next {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a78bfa' viewBox='0 0 24 24'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E") !important;
+}
+
+.dark .modal-button-prev {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a78bfa' viewBox='0 0 24 24'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E") !important;
+}
+
+/* Hover state for modal - purple background with white arrows */
+.modal-button-next:hover,
+.modal-button-prev:hover {
+    background-color: rgba(124, 58, 237, 0.95) !important;
+}
+
+.modal-button-next:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E") !important;
+}
+
+.modal-button-prev:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E") !important;
+}
+
+.swiper-pagination-bullet {
+    background: #7c3aed !important;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: linear-gradient(to right, #4f46e5, #7c3aed, #3b82f6) !important;
+}
+
+/* Project Cards Hover Effects */
+.project-card {
+    transform-origin: center;
+}
+
+.project-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.25);
+}
+
+/* Modal Animations */
+#projectModal {
+    animation: fadeIn 0.3s ease;
+}
+
+#projectModal > div {
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Gradient Text Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-gradient-to-r {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f5;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #27272a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #4f46e5, #7c3aed, #3b82f6);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #4338ca, #6d28d9, #2563eb);
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+/* Focus Styles */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid #7c3aed;
+    outline-offset: 2px;
+}
+
+.dark button:focus,
+.dark a:focus,
+.dark input:focus,
+.dark textarea:focus {
+    outline-color: #a78bfa;
+}
+
+/* Loading Animation (optional for future use) */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hero Background Pattern */
+#home {
+    position: relative;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(79, 70, 229, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.dark #home::before {
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+}
+
+/* Smooth Transitions */
+* {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Override for specific animations */
+.project-card,
+button,
+a,
+.swiper-slide {
+    transition-duration: 300ms;
+}
+
+/* Ensure body dark mode works */
+body {
+    transition: background-color 0.3s ease;
+}
+
+body.dark {
+    background-color: #18181b !important;
+}
+
+/* Fix modal container dark mode */
+#projectModal > div {
+    transition: background-color 0.3s ease;
+}
+
+.dark #projectModal > div {
+    background-color: #18181b !important;
+}
+
+.dark #projectModal > div > div:first-child {
+    background-color: #18181b !important;
+    border-bottom-color: #3f3f46 !important;
+}
+
+/* Image Lazy Loading Effect */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img[src=""],
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Backdrop Blur Support */
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    header {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* Lightbox Styles */
+#lightbox {
+    z-index: 9999;
+}
+
+.lightboxSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.lightboxSwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-button-next,
+.lightbox-button-prev {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+}
+
+.lightbox-button-next:hover,
+.lightbox-button-prev:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.lightbox-pagination {
+    color: white !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+}
+
+/* Rotate animation */
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Print Styles */
+@media print {
+    header,
+    footer,
+    #contact {
+        display: none;
+    }
+
+    .project-card {
+        break-inside: avoid;
+    }
+}
