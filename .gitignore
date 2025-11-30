@@ -13,3 +13,12 @@ npm-debug.log*
 # Environment
 .env
 .env.local
+
+# PHP Config (contains sensitive email credentials)
+config.php
+
+# Test files
+phpmailer.zip
+PHPMailer-6.9.1/
+MAIL_KURULUM.md
+nul

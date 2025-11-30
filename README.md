@@ -11,31 +11,40 @@ Modern, responsive portfolio website built with Tailwind CSS, GSAP animations, a
 - ✅ **Project Slider** - Swiper.js carousel with autoplay
 - ✅ **Lightbox Gallery** - Fullscreen image viewer with keyboard navigation
 - ✅ **Interactive Modals** - Detailed project information
+- ✅ **Contact Form** - PHP mail handler with PHPMailer & Gmail SMTP
 
 ## 🛠️ Technologies
 
 - **HTML5** - Semantic markup
 - **CSS3** - Custom styling with modern features
 - **JavaScript ES6+** - Dynamic functionality
+- **PHP 7.4+** - Backend mail handler
 - **Tailwind CSS** - Utility-first CSS framework
 - **GSAP** - Animation library
 - **Swiper.js** - Touch slider
+- **PHPMailer** - Email sending library
 - **Siemens iX** - Web components (ready for future use)
 
 ## 📂 Project Structure
 
 ```
 webix/
-├── index.html           # Main page
+├── index.html              # Main page
+├── contact.html            # Contact page (standalone)
+├── send.php                # PHP mail handler
+├── config.example.php      # Email config template
+├── config.php              # Email config (gitignored)
 ├── css/
-│   └── style.css       # Custom styles
+│   └── style.css          # Custom styles
 ├── js/
-│   ├── data.js         # Project data
-│   └── app.js          # Main logic
+│   ├── data.js            # Project data
+│   └── app.js             # Main logic
 ├── images/
-│   ├── pts/            # PTS project images
-│   ├── routeoptimizer/ # Route optimizer images
-│   └── uzman web site/ # Uzman website images
+│   ├── pts/               # PTS project images
+│   ├── routeoptimizer/    # Route optimizer images
+│   └── uzman web site/    # Uzman website images
+├── PHPMailer/
+│   └── src/               # PHPMailer library
 └── README.md
 ```
 
@@ -57,15 +66,45 @@ webix/
 1. Clone the repository:
 ```bash
 git clone https://github.com/AhmetBoy/portfolio.git
+cd portfolio
 ```
 
-2. Open `index.html` in your browser:
+2. **Setup Email Configuration** (for contact form):
 ```bash
-cd portfolio
+# Copy the example config file
+cp config.example.php config.php
+
+# Edit config.php and add your Gmail credentials
+# You need a Gmail App Password (not your regular password)
+# Visit: https://myaccount.google.com/apppasswords
+```
+
+3. **For Local Development** (PHP required):
+```bash
+# Start PHP built-in server
+php -S localhost:8000
+
+# Open browser
+open http://localhost:8000
+```
+
+4. **For Static Preview** (without contact form):
+```bash
+# Just open index.html
 open index.html
 ```
 
-That's it! No build process required.
+### 📧 Contact Form Setup
+
+The contact form requires PHP and uses PHPMailer with Gmail SMTP.
+
+**Steps:**
+1. Copy `config.example.php` to `config.php`
+2. Get Gmail App Password: https://myaccount.google.com/apppasswords
+3. Update credentials in `config.php`
+4. Upload to a PHP hosting (000webhost, InfinityFree, etc.)
+
+**Note:** `config.php` is gitignored for security - never commit your credentials!
 
 ## 📝 Customization
 

@@ -436,6 +436,178 @@ img:not([src]) {
     transform: rotate(180deg);
 }
 
+/* Force hide ALL input clear buttons and icons */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration,
+input::-ms-clear,
+input::-ms-reveal,
+input::-webkit-clear-button,
+input::-webkit-inner-spin-button,
+input::-webkit-calendar-picker-indicator,
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+    display: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+/* KILL ALL AUTOCOMPLETE DROPDOWNS */
+input::-webkit-calendar-picker-indicator,
+input::-webkit-list-button,
+input::-webkit-textfield-decoration-container {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Hide autocomplete panel globally */
+input::-webkit-autofill-panel,
+input::-webkit-autofill-and-password-panel {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Disable autocomplete dropdown styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    box-shadow: 0 0 0 30px white inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Dark mode autofill */
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active,
+.dark textarea:-webkit-autofill,
+.dark textarea:-webkit-autofill:hover,
+.dark textarea:-webkit-autofill:focus,
+.dark textarea:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #27272a inset !important;
+    box-shadow: 0 0 0 30px #27272a inset !important;
+    -webkit-text-fill-color: #fafafa !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Kill any datalist dropdowns */
+datalist {
+    display: none !important;
+}
+
+/* Kill browser suggestion overlays */
+input::backdrop,
+input::-webkit-backdrop {
+    display: none !important;
+    background: transparent !important;
+}
+
+/* Hide browser validation icons */
+input::-webkit-validation-bubble,
+input::-webkit-validation-bubble-message,
+input::-webkit-validation-bubble-arrow,
+input::-webkit-validation-bubble-arrow-clipper,
+textarea::-webkit-validation-bubble,
+textarea::-webkit-validation-bubble-message {
+    display: none !important;
+}
+
+/* Hide invalid/valid icons and remove styling */
+input:invalid,
+input:valid,
+textarea:invalid,
+textarea:valid {
+    box-shadow: none !important;
+}
+
+/* Contact Input - Force clean styling */
+.contact-input {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-clip: padding-box !important;
+}
+
+/* Remove ALL pseudo elements from contact inputs */
+.contact-input::-webkit-search-decoration,
+.contact-input::-webkit-search-cancel-button,
+.contact-input::-webkit-search-results-button,
+.contact-input::-webkit-search-results-decoration,
+.contact-input::-ms-clear,
+.contact-input::-ms-reveal,
+.contact-input::-webkit-clear-button,
+.contact-input::-webkit-outer-spin-button,
+.contact-input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    display: none !important;
+    margin: 0 !important;
+}
+
+/* Force dark mode for inputs */
+.dark .contact-input {
+    background-color: #27272a !important;
+    color: #fafafa !important;
+    border-color: #3f3f46 !important;
+}
+
+/* Dark mode focus state */
+.dark .contact-input:focus {
+    background-color: #27272a !important;
+    border-color: transparent !important;
+    outline-color: #7c3aed !important;
+}
+
+/* Hide textarea scrollbar */
+textarea {
+    overflow: hidden;
+    resize: vertical;
+}
+
+/* Only show scrollbar on hover/focus for textarea */
+textarea:hover,
+textarea:focus {
+    overflow-y: auto;
+}
+
+/* Style textarea scrollbar for dark mode */
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #d4d4d8;
+    border-radius: 4px;
+}
+
+.dark textarea::-webkit-scrollbar-thumb {
+    background: #52525b;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: #a1a1aa;
+}
+
+.dark textarea::-webkit-scrollbar-thumb:hover {
+    background: #71717a;
+}
+
 /* Print Styles */
 @media print {
     header,
@@ -448,3 +620,4 @@ img:not([src]) {
         break-inside: avoid;
     }
 }
+/* Force cache refresh */

@@ -328,22 +328,58 @@ function createLightbox() {
     });
 }
 
-// Contact Form Handler
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+// Disable autocomplete aggressively
+document.addEventListener('DOMContentLoaded', () => {
+    const inputs = document.querySelectorAll('.contact-input');
 
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
+    inputs.forEach(input => {
+        // Disable all autocomplete features
+        input.setAttribute('autocomplete', 'off');
+        input.setAttribute('autocorrect', 'off');
+        input.setAttribute('autocapitalize', 'off');
+        input.setAttribute('spellcheck', 'false');
 
-    console.log('Form submitted:', formData);
+        // Remove autocomplete dropdown on focus
+        input.addEventListener('focus', function() {
+            this.setAttribute('readonly', 'readonly');
+            setTimeout(() => {
+                this.removeAttribute('readonly');
+            }, 100);
+        });
+    });
+});
 
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
+// Contact Form Success/Error Message Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+    const contactForm = document.getElementById('contactForm');
+
+    if (status === 'success') {
+        // Başarılı mesaj göster
+        const successDiv = document.createElement('div');
+        successDiv.className = 'mb-6 p-4 bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 text-green-700 dark:text-green-300 rounded-lg';
+        successDiv.innerHTML = '✅ Mesajınız başarıyla gönderildi! En kısa sürede size geri dönüş yapacağız.';
+        contactForm.insertBefore(successDiv, contactForm.firstChild);
+        contactForm.reset();
+
+        // URL'i temizle
+        setTimeout(() => {
+            window.history.replaceState({}, document.title, window.location.pathname + '#contact');
+        }, 100);
+    } else if (status === 'error') {
+        // Hata mesajı göster
+        const error = urlParams.get('error') || 'Bir hata oluştu. Lütfen tekrar deneyin.';
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'mb-6 p-4 bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300 rounded-lg';
+        errorDiv.innerHTML = '❌ Hata: ' + decodeURIComponent(error);
+        contactForm.insertBefore(errorDiv, contactForm.firstChild);
+
+        // URL'i temizle
+        setTimeout(() => {
+            window.history.replaceState({}, document.title, window.location.pathname + '#contact');
+        }, 100);
+    }
 });
 
 // GSAP Animations
