@@ -539,6 +539,38 @@ textarea:valid {
     background-clip: padding-box !important;
 }
 
+/* NUCLEAR OPTION - Kill ALL X buttons */
+#contactForm input::-webkit-search-decoration,
+#contactForm input::-webkit-search-cancel-button,
+#contactForm input::-webkit-search-results-button,
+#contactForm input::-webkit-search-results-decoration,
+#contactForm input::-ms-clear,
+#contactForm input::-ms-reveal,
+#contactForm input[type="text"]::-ms-clear,
+#contactForm input[type="email"]::-ms-clear,
+#contactForm textarea::-ms-clear {
+    display: none !important;
+    -webkit-appearance: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Chrome/Edge clear button killer */
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+    background-image: none !important;
+    background-position: 0 0 !important;
+    padding-right: 1rem !important;
+}
+
+/* Kill the X on focus/hover */
+#contactForm input:focus::-webkit-search-cancel-button,
+#contactForm input:hover::-webkit-search-cancel-button {
+    display: none !important;
+    pointer-events: none !important;
+}
+
 /* Remove ALL pseudo elements from contact inputs */
 .contact-input::-webkit-search-decoration,
 .contact-input::-webkit-search-cancel-button,

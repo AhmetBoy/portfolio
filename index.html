@@ -104,7 +104,7 @@
                 </h2>
                 <p class="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto mb-12">
                     Crafting innovative solutions with cutting-edge technologies.
-                    Specialized in creating scalable, performant, and beautiful web applications.
+                    Specialized in creating scalable, high-performance, and beautiful web applications.
                 </p>
                 <a href="#projects" class="inline-block px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-500 text-white rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
                     View My Projects
@@ -164,10 +164,15 @@
                         type="text"
                         id="name"
                         name="name"
-                        autocomplete="new-password"
+                        autocomplete="chrome-off"
+                        autocorrect="off"
+                        autocapitalize="off"
                         spellcheck="false"
                         required
-                        class="contact-input w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                        readonly
+                        onfocus="this.removeAttribute('readonly');"
+                        class="contact-input w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                        style="-webkit-appearance: none; appearance: none;">
                 </div>
 
                 <div>
@@ -176,10 +181,15 @@
                         type="text"
                         id="email"
                         name="email"
-                        autocomplete="new-password"
+                        autocomplete="chrome-off"
+                        autocorrect="off"
+                        autocapitalize="off"
                         spellcheck="false"
                         required
-                        class="contact-input w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                        readonly
+                        onfocus="this.removeAttribute('readonly');"
+                        class="contact-input w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                        style="-webkit-appearance: none; appearance: none;">
                 </div>
 
                 <div>
@@ -187,11 +197,16 @@
                     <textarea
                         id="message"
                         name="message"
-                        rows="8"
-                        autocomplete="off"
+                        rows="6"
+                        autocomplete="chrome-off"
+                        autocorrect="off"
+                        autocapitalize="off"
                         spellcheck="false"
                         required
-                        class="contact-input w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:ring-2 focus:ring-purple-600 focus:border-transparent"></textarea>
+                        readonly
+                        onfocus="this.removeAttribute('readonly');"
+                        class="contact-input w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:ring-2 focus:ring-purple-600 focus:border-transparent min-h-[150px]"
+                        style="-webkit-appearance: none; appearance: none;"></textarea>
                 </div>
 
                 <button type="submit"
