@@ -23,7 +23,6 @@ Modern, responsive portfolio website built with Tailwind CSS, GSAP animations, a
 - **GSAP** - Animation library
 - **Swiper.js** - Touch slider
 - **PHPMailer** - Email sending library
-- **Siemens iX** - Web components (ready for future use)
 
 ## 📂 Project Structure
 
@@ -196,7 +195,7 @@ MIT License - feel free to use this project for your own portfolio!
 - [Tailwind CSS](https://tailwindcss.com/)
 - [GSAP](https://greensock.com/gsap/)
 - [Swiper.js](https://swiperjs.com/)
-- [Siemens iX](https://ix.siemens.io/)
+- [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
 ---
 
