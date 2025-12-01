@@ -11,6 +11,10 @@ const projectsData = [
             backend: ["Python", "Supabase (PostgreSQL)", "Supabase Auth", "RLS", "Real-time Subscriptions"],
             integrations: ["Google Maps API", "SheetJS", "PapaParse"]
         },
+        demoCredentials: {
+            email: "Test@pts.com",
+            password: "FVHTFVUTsdfvs645412341"
+        },
         images: [
             "images/pts/dashboard.PNG",
             "images/pts/harita.PNG",
@@ -25,7 +29,7 @@ const projectsData = [
             "images/pts/ayarlar.PNG"
         ],
         repoUrl: "https://github.com/AhmetBoy/pts",
-        liveUrl: "https://pts-one.vercel.app/personnel"
+        liveUrl: "https://pts-one.vercel.app/"
     },
     {
         id: "uzman_website",

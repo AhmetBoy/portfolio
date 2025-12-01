@@ -179,6 +179,40 @@ function openProjectModal(projectId) {
             </span>
         </div>
         <p class="text-lg leading-relaxed">${project.description}</p>
+        ${project.demoCredentials ? `
+            <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 dark:border-blue-600 rounded-lg border border-blue-100 dark:border-blue-800/50">
+                <h4 class="text-sm font-bold text-blue-900 dark:text-blue-200 mb-2 flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                    Demo Login Credentials
+                </h4>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center justify-between group">
+                        <span class="text-blue-700 dark:text-blue-300 font-medium">Email:</span>
+                        <div class="flex items-center gap-2">
+                            <code class="px-2 py-1 bg-blue-50 dark:bg-blue-950/50 text-blue-900 dark:text-blue-200 rounded font-mono text-xs border border-blue-100 dark:border-blue-800">${project.demoCredentials.email}</code>
+                            <button onclick="copyToClipboard('${project.demoCredentials.email}', this)" class="p-1.5 hover:bg-blue-100 dark:hover:bg-blue-900/30 rounded transition-colors" title="Copy email">
+                                <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between group">
+                        <span class="text-blue-700 dark:text-blue-300 font-medium">Password:</span>
+                        <div class="flex items-center gap-2">
+                            <code class="px-2 py-1 bg-blue-50 dark:bg-blue-950/50 text-blue-900 dark:text-blue-200 rounded font-mono text-xs border border-blue-100 dark:border-blue-800">${project.demoCredentials.password}</code>
+                            <button onclick="copyToClipboard('${project.demoCredentials.password}', this)" class="p-1.5 hover:bg-blue-100 dark:hover:bg-blue-900/30 rounded transition-colors" title="Copy password">
+                                <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ` : ''}
     `;
 
     // Set tech stack
@@ -196,18 +230,19 @@ function openProjectModal(projectId) {
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                 </svg>
-                View Website
+                <span>View Website</span>
+                ${project.demoCredentials ? `<span class="ml-2 px-2 py-0.5 bg-white/20 text-white text-xs rounded-full font-medium">🔐 Login Required</span>` : ''}
             </a>
         ` : ''}
         ${project.repoUrl ? `
-            <a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer"
+            <button onclick="showPrivateRepoAlert()"
                class="flex-1 px-6 py-3 border-2 border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300 rounded-lg font-semibold hover:border-purple-600 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 inline-flex items-center justify-center">
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
                 </svg>
                 <span>View Repository</span>
                 <span class="ml-2 px-2 py-0.5 bg-zinc-200 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-400 text-xs rounded-full font-medium">Private</span>
-            </a>
+            </button>
         ` : ''}
     `;
 
@@ -349,6 +384,82 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Copy to Clipboard Function
+function copyToClipboard(text, button) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Change icon to checkmark temporarily
+        const originalHTML = button.innerHTML;
+        button.innerHTML = `
+            <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+        `;
+
+        // Reset after 2 seconds
+        setTimeout(() => {
+            button.innerHTML = originalHTML;
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+        alert('Failed to copy to clipboard');
+    });
+}
+
+// Show Private Repository Alert
+function showPrivateRepoAlert() {
+    // Check if dark mode is active
+    const isDark = document.documentElement.classList.contains('dark');
+    const bgClass = isDark ? 'bg-zinc-800' : 'bg-white';
+    const borderClass = isDark ? 'border-zinc-700' : 'border-zinc-200';
+    const textClass = isDark ? 'text-zinc-100' : 'text-zinc-900';
+    const subtextClass = isDark ? 'text-zinc-400' : 'text-zinc-600';
+    const iconBgClass = isDark ? 'bg-yellow-900/30' : 'bg-yellow-100';
+    const iconClass = isDark ? 'text-yellow-500' : 'text-yellow-600';
+    const closeBtnClass = isDark ? 'bg-zinc-700 hover:bg-zinc-600 text-zinc-300' : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-700';
+
+    const alertHTML = `
+        <div id="privateRepoAlert" class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm z-[60] flex items-center justify-center p-4 animate-fadeIn" onclick="event.target === this && closePrivateRepoAlert()">
+            <div class="${bgClass} rounded-xl max-w-md w-full p-6 shadow-2xl border ${borderClass} animate-slideUp">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 rounded-full ${iconBgClass} flex items-center justify-center">
+                            <svg class="w-6 h-6 ${iconClass}" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <h3 class="text-lg font-bold ${textClass} mb-2">
+                            Private Repository
+                        </h3>
+                        <p class="text-sm ${subtextClass} mb-5 leading-relaxed">
+                            This repository is currently private and cannot be accessed publicly. If you would like to view the source code or discuss collaboration opportunities, please feel free to contact me.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="#contact" onclick="closePrivateRepoAlert(); closeModal();" class="flex-1 px-4 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-500 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-[1.02] transition-all duration-300 text-center text-sm">
+                                Contact Me
+                            </a>
+                            <button onclick="closePrivateRepoAlert()" class="flex-1 px-4 py-2.5 ${closeBtnClass} rounded-lg font-semibold transition-all duration-300 text-sm">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', alertHTML);
+}
+
+// Close Private Repository Alert
+function closePrivateRepoAlert() {
+    const alert = document.getElementById('privateRepoAlert');
+    if (alert) {
+        alert.remove();
+    }
+}
 
 // Contact Form Success/Error Message Handler
 document.addEventListener('DOMContentLoaded', function() {
